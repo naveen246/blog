@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Thoughts</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content on Thoughts</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Apr 2024 12:20:02 +0530</lastBuildDate>
@@ -13,6 +13,13 @@
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Wed, 10 Apr 2024 12:20:02 +0530</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Second Post</title>
+      <link>http://localhost:1313/posts/second-post/</link>
+      <pubDate>Wed, 10 Apr 2024 12:20:02 +0530</pubDate>
+      <guid>http://localhost:1313/posts/second-post/</guid>
       <description></description>
     </item>
   </channel>
