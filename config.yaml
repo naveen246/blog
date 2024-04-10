@@ -1,87 +1,171 @@
-baseURL: https://naveen246.github.io
-languageCode: en-us
-title: Thoughts
-theme: hugo-theme-mini
+# If your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would
+# contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://naveen246.github.io/"
+title: Exploration
+paginate: 5
+theme: [PaperMod]
 
-# Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish) / da (Danish), default 'en'
-defaultContentLanguage: en
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts"]
+# googleAnalytics: UA-123-45
 
-hasCJKLanguage: true
-permalinks:
-  posts: /posts/:title/
+minify:
+  disableXML: true
+  # minifyOutput: true
 
-paginate: 3
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Home
+          url: /
+          weight: 4
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Tags
+          url: tags/
+          weight: 10
+        # - name: Search
+        #   url: search/
+        #   weight: 10
+        - name: About
+          url: about/
 
-# googleAnalytics: your-google-analytics-id
-# disqusShortname: your-disqus-shortname
 
-# Hugo Configure Markup
-# More info: https://gohugo.io/getting-started/configuration-markup#
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Thoughts"
+  author: Naveen
+  # author: ["Me", "You"] # multiple authors
+
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  images: ["images/papermod-cover.png"]
+
+  profileMode:
+    enabled: false
+    title: Thoughts
+    imageUrl: "#"
+    imageTitle: my image
+    # imageWidth: 120
+    # imageHeight: 120
+    buttons:
+      - name: Archives
+        url: archives
+      - name: Tags
+        url: tags
+
+  homeInfoParams:
+    Title: "Exploring things I find interesting"
+
+  socialIcons:
+    - name: github
+      title: Github
+      url: "https://github.com/naveen246"
+    - name: X
+      title: Twitter
+      url: "https://twitter.com/_naveen246"
+
+  # editPost:
+  #   URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
+
+  # label:
+  # iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" fill="currentColor"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>'
+  # text: "Home"
+  # icon: icon.png
+  # iconHeight: 35
+
+  # analytics:
+  #     google:
+  #         SiteVerificationTag: "XYZabc"
+
+  assets:
+    disableHLJS: true
+  #     favicon: "<link / abs url>"
+  #     favicon16x16: "<link / abs url>"
+  #     favicon32x32: "<link / abs url>"
+  #     apple_touch_icon: "<link / abs url>"
+  #     safari_pinned_tab: "<link / abs url>"
+
+  # cover:
+  #     hidden: true # hide everywhere but not in structured data
+  #     hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
+
+  # fuseOpts:
+  #     isCaseSensitive: false
+  #     shouldSort: true
+  #     location: 0
+  #     distance: 1000
+  #     threshold: 0.4
+  #     minMatchCharLength: 0
+  #     keys: ["title", "permalink", "summary", "content"]
+
 markup:
-  highlight:
-    guessSyntax: true
-    style: emacs
-  tableOfContents:
-    endLevel: 3
-    ordered: false
-    startLevel: 2
-  # needed to render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
 
-# Social links in footer, support github,twitter,stackoverflow,facebook
-social:
-  # e.g.
-  github: https://github.com/naveen246
-  twitter: https://twitter.com/_naveen246
-  # stackoverflow: your-stackoverflow-link
-  # facebook: your-facebook-link
+# privacy:
+#   vimeo:
+#     disabled: false
+#     simple: true
 
+#   twitter:
+#     disabled: false
+#     enableDNT: true
+#     simple: true
 
-# Site parameters
-params:
-  # Site Author
-  author: Naveen
-  # Author biography
-  bio: Software Engineer
-  # Site Description, used in HTML meat
-  description: Thoughts
+#   instagram:
+#     disabled: false
+#     simple: true
 
+#   youtube:
+#     disabled: false
+#     privacyEnhanced: true
 
-  ###########################################
-  # Optional Configuration
-  ###########################################
-
-  # To enable RSS, you could set `enableRSS: true`, default is `true`
-  enableRSS: true
-  # To enable comments, you may need to set `disqusShortname`
-  enableComments: true
-  # To enable comments, you may need to set `googleAnalytics`
-  enableGoogleAnalytics: true
-  # To enable table of content, you could set `showToc: true`, default is `false`
-  showToc: true
-  # To hidden powerBy message in the page footer, you could set: `showPowerBy: false`, default is `true`
-  showPowerBy: true
-  # To enable math typesetting , you could set `math: true`, default is `false`
-  math: false
-  # To hidden post summary in home page, you could set `hiddenPostSummaryInHomePage: true`, default is `false`
-  hiddenPostSummaryInHomePage: false
-  # Website copyright, default: '© Copyright 2021 ❤️ {params.author}'
-  copyright: '' 
-
-  # Extra links in navigation
-  links:
-    ## e.g.
-    # - name: Project
-    #   path: /project
-
-  # You can put your custom css and js to `static` directory, or use remote css and js files which start with `http://` or `https://`
-  customCSS:
-    ## e.g.
-    # - css/custom.css # local css in `static/css/custom.css`
-    # - https://example.com/custom.css # remote css
-  customJS:
-    ## e.g.
-    # - js/custom.js # local js in `static/js/custom.js`
-    # - https://example.com/custom.js # remote js
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
