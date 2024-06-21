@@ -63,8 +63,8 @@ When a buffer-page holding contents of a disk-block is made to hold the contents
 This can be done using LRU, LFU and other strategies.
 
 LRU can be implemented by using a list of unpinned buffers.
-When a replacement buffer needs to be chosen, remove the buffer-page at the head of the list and use it. 
-When a buffer's pin count becomes 0, add it to the end of the list.
+When a buffer's pin count becomes 0 (no longer used by any client), add it to the tail-end of the list.
+When a buffer needs to be chosen, the Least Recently Used buffer-page is present at the head of the list so remove the buffer-page at the head of the list and use it.
 
 
 
